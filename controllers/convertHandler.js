@@ -16,7 +16,8 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     const units = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
-    input = input.match(/\D+/)[0];
+    input = input.split("/");
+    input = input[input.length - 1].match(/\D+/)[0];
     if (units.includes(input)) {
       return input;
     } else {
